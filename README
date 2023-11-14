@@ -1,0 +1,54 @@
+#Copyright Constantinescu Radu 313CA 2022-2023
+My_octave.c
+
+
+Voi incepe prin a explica mainul(si operatia care apare in "L",  deoarece aceasta este facuta in main), si dupa o sa explic pe rand fiecare functie, precizand ordinea deoarece cele mai usoare se leaga de alte functii.
+
+-MAIN-
+In main am facut operatia de alocare. Am inceput prin a aloca vectorului de matrici, linii si de coloane 0 pt a avea un start, pentru a putea folosii operatia de realocare.
+ 
+-ALOCARE- 
+Aceasta operatia aloca memorie unei matrici. Intai aloca memorie pentru vectorul de linii, apoi aloca pe fiecare vector de linii, coloanele. Operatia se opreste daca alocarea esueaza.
+
+-MAIN-2-
+Fiecare matrice alocata este introdusa in vectorul de matrice, apoi numarul de linii, respectiv de coloane este retinu in vectorii aferenti. Citim matricea de la tastatura clasic, din fucntia citire (pe care nu cred ca este nevoie sa o explic😂️). In continuare in main voi vericfica ce caracter se primeste de la tastatura, si in functie de aceasta voi efectua o operatie.
+
+-COMANDA-NERECUNOSCUTA-
+In cazul in care litera nu se gaseste printre cele date in problema se va afisa mesajul "Unrecognized command", si se va trece mai departe.
+
+-DETERMINAREA-DIMENSIUNILOR-
+Se citeste litera P si indexul matricei ale carei dimensiuni vrem sa le printam. Vom printa asadar, elementele din vectorul de linii si din vectorul de coloane de pe pozitia care se cere.
+
+-AFISAREA-MATRICEI-
+Primim de la tastatura caracterul D. Afisarea matricei se face in mod clasic, printand fiecare element, cu spatiu intre ele, si cu enter intre coloane, dar si la final.
+
+-INMULTIREA-A-DOUA-MATRICE-
+Am creat o matrice pe care vreau sa o adaug la finalul sirului de matrice. Apoi o sa determin ce element trebuie sa pun pe fiecare pozitie cu ajutorul urmatoare functii. (Inainte verific daca matricele se pot inmulti -> numarul de linii al matricei 2 trebuie sa fie egal cu numarul de coloane al matricei 1.) Matricea pe care o creez este alocata similar, cu alocarea de la inceput, din main. 
+
+-INMULTIREA-ELEMENTELOR-
+Fiecare element (pozita i, j) din noua matrice este suma produsurilor dintre elementul de pe linie si cel de pe coloana(a[k][j] * b[i][k]). Apoi se face gaseste restul impartirii la 10007. 
+
+-NUMERE-NEGATIVE-
+In cazul in care dam de numere negative le adunam cu 10007.
+
+-REDIMENSIONARE-
+Se citste numarul de linii si de coloane. Se citest liniile si coloanele (iar daca nu se poate se afiseaza mesajul dat).Se face o matrice auxiliara cu dimensiunile date care se aseaza in locul celei date (redimensionam si zona de memorie data). La final matricea auxiliara se sterge. 
+
+-SORTARE-
+Sortarea se va face pe adrese, pentru a nu intampina dificultati legate de dimensiunile matricelor (asa cum am patit eu pentru ca nu mi-a dat prin minte la inceput😂️). Vom face un bubble sort care va pune in final pe prima pozitie adresa matricei care da cea mai mare suma a elementelor prelucrata.
+
+-SUMA-
+Spun prelucrata pentru ca de fiecare data cand sum trece de 10007 aceasta se egaleaza cu restul impartirii la 10007.
+
+-TRANSPUNERE-
+Fac o nou matrice care are ca numar de coloane numarul de linii al primei si invers. Apoi fac operatia de transpunere inversand indicii (a[i][j] = a[j][i]). Matricea noua se va pune in locul celei vechi. Cea ramasa va fi ianinte stearsa pentru a se face loc. Observa ca aceasta operatie nu are nevoie de redimensionare deoare inmultirea este comutativa (i * j == j * i). Totusi, schimbata valoare elementelor din vectorii de linii, respectiv coloane.
+
+-RIDICARE-LA-PUTERE-
+Se face in timp logaritmic. Intai alocam o copie, si o matrice care va reprezenta rezultatul, pe care o vom initializa ca fiind In (1 pe diagonala prinicpala, 0 in rest). Cat timp puterea este mai mare ca 0, vom aplica urmatoarea regula. Daca puterea este negativa, vom inmulti matricea care fost la inceput In, cu matricea noastra. Urmatorul pas se face indiferent de paritatea puterii, anume se ridica la patrat matricea data(cand fac a doua oara aceeasi operatie, matricea care a fost la inceput In va fi matricea data, iar matricea noastra(A) va fi A^2).Cand alogritmul se opreste vom da matricei noastre valoarea celei care a fost laa inceput In. Eliberam copiile.
+
+-ELIBERAREA-UNEI-MATRICE-
+Fac intai o interschimbare de la pozitia data pana la final. Apoi stergem utlima pozitie.
+
+-ELIBERARE-
+Se elibereaza vectorii de matrici, de linii si de coloane. Intai se elibereaza coloanele, apoi cate o matrice, aoi intregul vector(doar pentru vectorul de matrice).
+
