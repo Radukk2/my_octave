@@ -1,4 +1,4 @@
-# Copyright 2020 Darius Neatu <neatudarius@gmail.com>
+# Copyright 2023 Constantinescu Radu
 
 # compiler setup
 CC=gcc
@@ -10,10 +10,10 @@ TARGETS=my_octave
 build: $(TARGETS)
 
 my_octave: my_octave.c
-	$(CC) $(CFLAGS) my_octave.c -o my_octave
+	$(CC) $(CFLAGS) my_octave.c matlab_functions.c -o my_octave
 
 pack:
-	zip -FSr 313CA_ConstantinescuRadu_Ioan_Tema2.zip README Makefile *.c *.h
+	zip -FSr 323CA_ConstantinescuRadu_Ioan_Tema2.zip README Makefile *.c *.h
 
 clean:
 	rm -f $(TARGETS)
