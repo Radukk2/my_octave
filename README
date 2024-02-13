@@ -1,6 +1,5 @@
-#Copyright Constantinescu Radu 313CA 2022-2023
+#Copyright Constantinescu Radu 313CA 2023-2024
 My_octave.c
-
 
 Voi incepe prin a explica mainul(si operatia care apare in "L",  deoarece aceasta este facuta in main), si dupa o sa explic pe rand fiecare functie, precizand ordinea deoarece cele mai usoare se leaga de alte functii.
 
@@ -51,4 +50,9 @@ Fac intai o interschimbare de la pozitia data pana la final. Apoi stergem utlima
 
 -ELIBERARE-
 Se elibereaza vectorii de matrici, de linii si de coloane. Intai se elibereaza coloanele, apoi cate o matrice, aoi intregul vector(doar pentru vectorul de matrice).
+
+-ALGORITMUL-LUI-STRASSEN-
+Este functia care face inmultirea a doua matrice prin metoda prezentata Cele 7 matrice auxiliare rezultate din bucati ale matricelor de inmultit sunt aflate cu ajutorul functiior get_M*. Acestea 
+aloca mini-matricea din A si pe cea din B si le inmulteste (A fiind prima matrice de inmultit si B fiind cea de a doua, iar daca aveam, spre exemplu, A1 + A3 le-am tratat ca pe o singura matrice).
+Apoi am facut o functie get_Strassen care punea aceste matrice la locul lor in matricea mare, iar in final, functia strassen adauga aceasta matrice la in array.
 
